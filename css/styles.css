@@ -1,0 +1,239 @@
+/* Below code is the CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Below code is used to style the body of the page */
+body {
+    font-family: sans-serif;
+}
+
+/* Below code is used to style the navbar element */
+.navbar {
+    background-color: #000;
+    color: #fff;
+    padding: 25px 60px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+
+}
+
+/* Below coe is used to style the cart div element inside the navbar element */
+.navbar .cart {
+    position: relative;
+    font-size: 45px;
+    font-weight: bolder;
+    padding: 8px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Below code is used to style the cart div element hover pseudo element */
+.cart:hover {
+    background-color: #000;
+    color: #fff;
+    border: 5px solid #fff;
+}
+
+/* Below code is used to style the cartAmount div inside the cart div element */
+.navbar .cart .cartAmount {
+    position: absolute;
+    top: -25px;
+    right: -10px;
+    background-color: red;
+    color: #fff;
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/*Below code is used to style the shop Div Element  */
+.shop {
+    display: grid;
+    grid-template-columns: repeat(4, 223px);
+    gap: 30px;
+    justify-content: center;
+    margin-top: 10rem;
+}
+
+/* Below code is used to style the item Div Element */
+.item {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #000;
+    border-radius: 8px;
+    margin: 20px 15px;
+    width: 220px;
+}
+
+/* Below code is used to style the details element inside the item div element */
+.item img {
+  width: 100%;
+  border-radius: 2px 2px 0 0;
+}
+
+/* Below code is used to style the h2 element inside the details element inside the item div element */
+.item .details {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    gap: 10px;
+}
+
+/* Below code is used to style the price-quantity div  element inside the details element 
+ inside the item div element */
+.price-quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Below code is used to style the button div  element inside the details element 
+ inside the item div element */
+ .button {
+    display: flex;
+    gap: 8px;
+    font-size: 16px;
+    padding: 12px;
+ }
+
+ /* Below code is used to style the Minus i element inside the buttons */
+.fa-minus {
+    color: red;
+    font-weight: 2rem;
+    cursor: pointer;
+}
+
+/* Below code is used to style the Minus i element inside the buttons */
+.fa-plus {
+    color: darkgreen;
+    font-weight: 2rem;
+    cursor: pointer;
+}
+
+/* ----------------------START THE MEDIA QUERY SESSION HERE------------------------------------- */
+
+/* Below code is the media query to response 1000px */
+@media (max-width:1000px) {
+    .shop {
+    grid-template-columns: repeat(2, 223px);
+
+    }
+}
+
+/* Below code is the media query to response to 500px*/
+@media (max-width:500px) {
+    .shop {
+    grid-template-columns: repeat(1, 223px);
+
+    }
+}
+
+/* ----------------------END THE MEDIA QUERY SESSION HERE------------------------------------- */
+
+/* ----------------------BELOW CODE IS USED TO STYLE THE CART.HTML--------------------------- */
+/* Below code is used to style Shoppingcart */
+.shoppingcart {
+    display: grid;
+    grid-template-columns: repeat(1, 320px);
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Below code is usec to style the cartItem inside the shoppingcart div */
+.shoppingcart .cartItem {
+    display: flex;
+    border: 2px solid #000;
+    border-radius: 7px;
+}
+
+/* Below code is used to style cartdetails
+.cartdetails {
+    display: flex;
+} */
+
+/* Below code is use to style the Title-Price-x */
+.title-price-x {
+    display: flex;
+    justify-content: space-between;
+    width: 195px;
+    padding: 10px;
+    align-items: center;
+}
+
+
+.price {
+    background-color: black;
+    color: #fff;
+    border-radius: 4px;
+    padding: 3px 6px;
+}
+
+/* Below code is used to style the title-price h4 element */
+.title-price {
+    display: flex;
+    gap: 10px;
+}
+
+/* Below code is used to style the X icon inside the cartdetails div */
+.fa-x {
+    color: red;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+/* Below code is used to style the  */
+.homeBTN {
+    background-color: #212529;
+    color: #fff;
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Below code is used to style the label div element */
+.label {
+    text-align: center;
+    margin-top: 10rem;
+}
+
+h3 {
+    padding: 12px;
+}
+
+.checkout {
+    background-color: green;
+    color: #fff;
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+.removeAll {
+    background-color: red;
+    color: #fff;
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}

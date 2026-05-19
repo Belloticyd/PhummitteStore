@@ -37,6 +37,7 @@ let generateShop = () => {
                         <i onclick="increment(${id})"  class="fa fa-plus"></i>
                     </div>
                 </div>
+                <button class="addToCart" id="addtoCart">Add to Cart</button>
             </div>
         </div>
         <!-- End of First Card Div Element -->

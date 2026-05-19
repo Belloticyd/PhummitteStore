@@ -50,6 +50,7 @@ let generateCartItem = () => {
                         <div id=${id} class="quantity">${item}</div>
                         <i onclick="increment(${id})"  class="fa fa-plus"></i>
                     </div>
+                    <button id="addtoCart" class="addTCart">Add to Cart</button>
                     <h3>$ ${item * search.price}</h3>
                 </div>
             </div>
@@ -135,13 +136,13 @@ let removeItem = (id) => {
     let selectedItem = id;
     basket = basket.filter((x) => x.id !== selectedItem.id);
 
-    generateCartItem();
-    totalAmount();
-    calculator();
+        generateCartItem();
+        totalAmount();
+        calculator();
     //  Below code is use to save on the localstorage
     localStorage.setItem("data", JSON.stringify(basket));
 };
-
+  
 
 // Below code is used to delete everything inside the cart basket
 let clearCart = () => {
@@ -162,10 +163,47 @@ let totalAmount = () => {
         }).reduce((x,y) => x+y, 0);
         label.innerHTML = `
         <h2>Total Bill: $ ${amount}</h2>
-        <button class="checkout">Checkout</button>
+        <button class="checkout" onclick="checkoutBtn()" id="checkoutBtn">Checkout</button>
         <button onclick="clearCart()" class="removeAll">Clear Cart</button>
+        <!---- Below code is the Modal-Box Pop-pu---->
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Your Total Bill is $ ${amount} Please Proceed to Payment Page</h2>
+                <a href="https://paystack.com/pay/0k11jyecpz"><button class="addToCart payment">Payment</button></a>
+            </div>
+        </div>
         `;
     } else return;
 }; 
 
 totalAmount();
+
+// Below code is use to create a Box-Modal
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var checkoutBtn = document.getElementById("checkoutBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+checkoutBtn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
